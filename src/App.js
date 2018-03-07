@@ -21,8 +21,7 @@ class App extends Component {
                                     img={response.img}
                                     title={response.title}
                                     description={response.description}
-                                    status={response.status}
-                                    statusText={response.statusText}/>
+                                    stock={response.stock}/>
                             )}
                         )}
                     </section>

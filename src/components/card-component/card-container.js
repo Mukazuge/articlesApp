@@ -5,6 +5,8 @@ import {faPencilAlt, faCircle} from '@fortawesome/fontawesome-free-solid';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
 
 const ArticleCard = (props) => {
+    const status = props.stock > 0 ? props.stock > 50 ? 'success' : 'warning' : 'danger';
+
     return (
         <div className="small-card">
             <Card className="m-2 card-shadow">
@@ -19,8 +21,8 @@ const ArticleCard = (props) => {
                         </Button>
                     </CardTitle>
                     <CardText>
-                        <FontAwesomeIcon className={'mr-1 text-' + props.status} icon={faCircle}/>
-                        {props.statusText}
+                        <FontAwesomeIcon className={'mr-1 text-' + status} icon={faCircle}/>
+                        {props.stock > 0 ? props.stock + ' in stock' : 'Out of stock'}
                     </CardText>
                     <CardText>{props.description}</CardText>
                 </CardBody>

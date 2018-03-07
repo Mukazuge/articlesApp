@@ -19,80 +19,70 @@ const mockArray = [
         img: womanTShirt,
         title: 'Woman T-Shirt',
         description: ipsum,
-        status: 'danger',
-        statusText: 'Out of stock'
+        stock: 0
     },
     {
         id: '2',
         img: fourwheelsTShirt,
         title: 'Four wheels porn T-Shirt',
         description: ipsum,
-        status: 'success',
-        statusText: '350 in stock'
+        stock: 350
     },
     {
         id: '3',
         img: youNeverKTShirt,
         title: 'You Never Know T-Shirt',
         description: ipsum,
-        status: 'success',
-        statusText: '200 in stock'
+        stock: 200
     },
     {
         id: '4',
         img: wolfTShirt,
         title: 'Wolf T-Shirt',
         description: ipsum,
-        status: 'warning',
-        statusText: '5 in stock'
+        stock: 5
     },
     {
         id: '5',
         img: trippedTShirt,
         title: 'Tripped T-Shirt',
         description: ipsum,
-        status: 'warning',
-        statusText: '9 in stock'
+        stock: 19
     },
     {
         id: '6',
         img: breakingBadTShirt,
         title: 'Breaking Bad T-Shirt',
         description: ipsum,
-        status: 'danger',
-        statusText: 'Out of stock'
+        stock: 0
     },
     {
         id: '7',
         img: coolLionTShirt,
         title: 'Cool Lion T-Shirt',
         description: ipsum,
-        status: 'success',
-        statusText: '450 in stock'
+        stock: 450
     },
     {
         id: '8',
         img: mineCraftTShirt,
         title: 'Mine Craft T-Shirt',
         description: ipsum,
-        status: 'warning',
-        statusText: '12 in stock'
+        stock: 42
     },
     {
         id: '9',
         img: marvelTShirt,
         title: 'Marvel T-Shirt',
         description: ipsum,
-        status: 'success',
-        statusText: '700 in stock'
+        stock: 700
     },
     {
         id: '10',
         img: hatersGHTShirt,
         title: 'Haters Gonna Hate T-Shirt',
         description: ipsum,
-        status: 'success',
-        statusText: '900 in stock'
+        stock: 900
     }
 ];
 
