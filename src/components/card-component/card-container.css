@@ -1,0 +1,18 @@
+.card-img {
+    height: 15rem;
+    object-fit: cover;
+}
+
+.card-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: start;
+}
+
+.pencil-style {
+    font-size: 1.3rem;
+}
+
+.small-card {
+    width: 20rem;
+    height: 25rem;
+}
