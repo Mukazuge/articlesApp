@@ -1,5 +1,4 @@
 import React from 'react';
-import img from '../../assets/t-shirt1.jpg';
 import './card-container.css';
 import {Button, Card, CardBody, CardImg, CardText, CardTitle} from 'reactstrap';
 import {faPencilAlt, faCircle} from '@fortawesome/fontawesome-free-solid';
@@ -10,7 +9,7 @@ const ArticleCard = (props) => {
         <div className="small-card">
             <Card className="m-2 card-shadow">
                 <CardImg
-                    src={img}
+                    src={props.img}
                     alt="Card image cap"/>
                 <CardBody>
                     <CardTitle className="d-flex align-items-center justify-content-between">
