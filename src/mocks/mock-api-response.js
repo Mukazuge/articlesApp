@@ -15,71 +15,71 @@ const ipsum = `
 
 const mockArray = [
     {
-        id: '1',
-        img: womanTShirt,
+        id: 'random_id_1',
+        img: womanTShirt.toString(),
         title: 'Woman T-Shirt',
         description: ipsum,
         stock: 0
     },
     {
-        id: '2',
-        img: fourwheelsTShirt,
+        id: 'random_id_2',
+        img: fourwheelsTShirt.toString(),
         title: 'Four wheels porn T-Shirt',
         description: ipsum,
         stock: 350
     },
     {
-        id: '3',
-        img: youNeverKTShirt,
+        id: 'random_id_3',
+        img: youNeverKTShirt.toString(),
         title: 'You Never Know T-Shirt',
         description: ipsum,
         stock: 200
     },
     {
-        id: '4',
-        img: wolfTShirt,
+        id: 'random_id_4',
+        img: wolfTShirt.toString(),
         title: 'Wolf T-Shirt',
         description: ipsum,
         stock: 5
     },
     {
-        id: '5',
-        img: trippedTShirt,
+        id: 'random_id_5',
+        img: trippedTShirt.toString(),
         title: 'Tripped T-Shirt',
         description: ipsum,
         stock: 19
     },
     {
-        id: '6',
-        img: breakingBadTShirt,
+        id: 'random_id_6',
+        img: breakingBadTShirt.toString(),
         title: 'Breaking Bad T-Shirt',
         description: ipsum,
         stock: 0
     },
     {
-        id: '7',
-        img: coolLionTShirt,
+        id: 'random_id_7',
+        img: coolLionTShirt.toString(),
         title: 'Cool Lion T-Shirt',
         description: ipsum,
         stock: 450
     },
     {
-        id: '8',
-        img: mineCraftTShirt,
+        id: 'random_id_8',
+        img: mineCraftTShirt.toString(),
         title: 'Mine Craft T-Shirt',
         description: ipsum,
         stock: 42
     },
     {
-        id: '9',
-        img: marvelTShirt,
+        id: 'random_id_9',
+        img: marvelTShirt.toString(),
         title: 'Marvel T-Shirt',
         description: ipsum,
         stock: 700
     },
     {
-        id: '10',
-        img: hatersGHTShirt,
+        id: 'random_id_10',
+        img: hatersGHTShirt.toString(),
         title: 'Haters Gonna Hate T-Shirt',
         description: ipsum,
         stock: 900

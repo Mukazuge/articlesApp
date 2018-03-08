@@ -1,23 +1,24 @@
-import React, { Component } from 'react';
-import './card-container.css';
+import './article-card.css';
 import {Card, CardBody, CardImg, CardText, CardTitle} from 'reactstrap';
+import ArticleModal from "../article-modal/article-modal";
 import {faCircle} from '@fortawesome/fontawesome-free-solid';
 import FontAwesomeIcon from '@fortawesome/react-fontawesome';
-import EditModal from "../edit-modal/edit-modal";
+import React, { Component } from 'react';
 
 class ArticleCard extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            shouldOpenModal: false
-            // should trigger modal and send form data to modal
-        };
 
         this.changeValues = this.changeValues.bind(this);
+        this.removeArticleFromList = this.removeArticleFromList.bind(this);
     }
 
     changeValues(event) {
         this.props.updateAppData({...event});
+    }
+
+    removeArticleFromList(event) {
+        this.props.onDeleteItem({id: event.id});
     }
 
     render () {
@@ -31,7 +32,8 @@ class ArticleCard extends Component {
                     <CardBody>
                         <CardTitle className="d-flex align-items-center justify-content-between">
                             {this.props.title}
-                            <EditModal onSaveValue={this.changeValues} {...this.props}/>
+                            <ArticleModal type="edit"
+                              onArticleDelete={this.removeArticleFromList} onSaveValue={this.changeValues} {...this.props}/>
                         </CardTitle>
                         <CardText>
                             <FontAwesomeIcon className={'mr-1 text-' + status } icon={faCircle}/>

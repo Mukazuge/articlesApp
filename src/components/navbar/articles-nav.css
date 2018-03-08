@@ -1,0 +1,22 @@
+.input-icon {
+    width: 2rem;
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+    border-left: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.form-control {
+    border-left: none;
+}
+
+.form-control:focus {
+    border-top: 1px solid #ced4da;
+    border-bottom: 1px solid #ced4da;
+    border-right: 1px solid #ced4da;
+    box-shadow: none;
+}
+
+.input-group {
+    width: 20rem;
+}

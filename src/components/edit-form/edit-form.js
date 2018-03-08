@@ -1,43 +1,69 @@
 import './edit-form.css';
+import {Button, Form, FormGroup, Input, Label} from 'reactstrap';
 import React, { Component } from 'react';
-import {Button, Form, FormGroup, Input, Label} from "reactstrap";
 
 class EditForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            description: props.description,
             img: props.img,
             title: props.title,
-            description: props.description,
             stock: props.stock
         };
-
+        
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.onDelete = this.onDelete.bind(this);
         this.shouldClose = this.shouldClose.bind(this);
     }
 
-    handleSubmit(event) {
-        const article = {
-            id: this.props.id,
-            ...this.state
-        };
+    checkFormValues() {
+        const description = this.state.description.trim() !== '';
+        const img = this.state.img !== 'Select image';
+        const title = this.state.title.trim() !== '';
+        const stock = this.state.stock > -1;
 
-        this.props.onSubmitForm({...article});
+        return description && img && title && stock;
+    }
+
+    handleSubmit(event) {
+        let article = null;
+        if (this.props.isEditing === true) {
+            article = {
+                id: this.props.id,
+                ...this.state
+            };
+
+            this.props.onEditArticle({...article});
+        } else {
+            article = {
+                id: this.props.id,
+                ...this.state
+            };
+
+            this.props.onCreateArticle({...article});
+        }
+
         event.preventDefault();
     }
 
-    shouldClose() {
-        this.props.shouldClose();
-    }
-
     handleInputChange(event) {
+
         const name = event.target.name;
         const value = event.target.value;
 
         this.setState({
             [name]: value
         });
+    }
+
+    onDelete() {
+        this.props.notifyDelete({id: this.props.id});
+    }
+
+    shouldClose() {
+        this.props.shouldClose();
     }
 
     render() {
@@ -50,6 +76,7 @@ class EditForm extends Component {
                 <FormGroup>
                     <Label>Select</Label>
                     <Input type="select" name="img" value={this.state.img} id="imgSelect" onChange={this.handleInputChange}>
+                        <option defaultValue>Select image</option>
                         {this.props.collection.map(item => {
                             return (
                                 <option key={item.id}>
@@ -67,8 +94,8 @@ class EditForm extends Component {
                     <textarea className="fill-area" name="description" placeholder="set Description" value={this.state.description} onChange={this.handleInputChange}/>
                 </FormGroup>
                 <div className="d-flex justify-content-between p-3">
-                    <Button type="button" color="secondary" onClick={this.shouldClose}>Close</Button>
-                    <Button color="success">Save</Button>
+                    <Button type="button" color="danger" onClick={this.onDelete}>Delete</Button>
+                    <Button disabled={!this.checkFormValues()} color="success">Save</Button>
                 </div>
             </Form>
         );
