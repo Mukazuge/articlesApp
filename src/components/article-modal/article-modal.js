@@ -11,50 +11,43 @@ class ArticleModal extends Component {
         this.state = {
             shouldOpen: false
         };
-
-        this.callDelete = this.callDelete.bind(this);
-        this.onAddNewCard = this.onAddNewCard.bind(this);
-        this.toggle = this.toggle.bind(this);
-        this.updateCardContainer = this.updateCardContainer.bind(this);
     }
 
-    callDelete(event) {
+    callDelete = (event) => {
         this.props.onArticleDelete({id: event.id});
         this.toggle();
-    }
+    };
 
-    onAddNewCard(event) {
+    onAddNewCard = (event) => {
         this.props.createCard({...event});
         this.toggle();
-    }
+    };
 
-    toggle() {
+    toggle = () => {
         this.setState(oldState => ({
             shouldOpen: !oldState.shouldOpen
         }));
-    }
+    };
 
-    updateCardContainer(event) {
+    updateCardContainer = (event) => {
         this.props.onSaveValue({...event});
         this.toggle();
-    }
+    };
 
     render() {
         let openButton = null;
         let isEditing = this.props.type !== 'create';
-        switch (this.props.type) {
-            case 'create':
-                openButton = <Button color="primary" onClick={this.toggle}>
-                                <FontAwesomeIcon className="mr-1" icon={faPlus}/>
-                                New
-                            </Button>;
-                break;
-            default:
-                openButton = <Button color="link" onClick={this.toggle}>
-                                <FontAwesomeIcon className="pencil-style" icon={faPencilAlt}/>
-                            </Button>;
-                break;
+        if (this.props.type === 'create') {
+            openButton = <Button color="primary" onClick={this.toggle}>
+                            <FontAwesomeIcon className="mr-1" icon={faPlus}/>
+                            New
+                        </Button>;
+        } else {
+            openButton = <Button color="link" onClick={this.toggle}>
+                            <FontAwesomeIcon className="pencil-style" icon={faPencilAlt}/>
+                        </Button>;
         }
+
         return (
             <div>
                 {openButton}

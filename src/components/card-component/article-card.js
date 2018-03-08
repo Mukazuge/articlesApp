@@ -8,18 +8,15 @@ import React, { Component } from 'react';
 class ArticleCard extends Component {
     constructor(props) {
         super(props);
-
-        this.changeValues = this.changeValues.bind(this);
-        this.removeArticleFromList = this.removeArticleFromList.bind(this);
     }
 
-    changeValues(event) {
+    changeValues = (event) => {
         this.props.updateAppData({...event});
-    }
+    };
 
-    removeArticleFromList(event) {
+    removeArticleFromList = (event) => {
         this.props.onDeleteItem({id: event.id});
-    }
+    };
 
     render () {
         const status = this.props.stock > 0 ? this.props.stock > 50 ? 'success' : 'warning' : 'danger';

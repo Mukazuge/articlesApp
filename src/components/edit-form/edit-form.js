@@ -11,23 +11,18 @@ class EditForm extends Component {
             title: props.title,
             stock: props.stock
         };
-
-        this.handleInputChange = this.handleInputChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.onDelete = this.onDelete.bind(this);
-        this.shouldClose = this.shouldClose.bind(this);
     }
 
-    checkFormValues() {
+    checkFormValues = () => {
         const description = this.state.description.trim() !== '';
         const img = this.state.img !== 'Select image';
         const title = this.state.title.trim() !== '';
         const stock = this.state.stock > -1;
 
         return description && img && title && stock;
-    }
+    };
 
-    handleSubmit(event) {
+    handleSubmit = (event) => {
         let article = null;
         if (this.props.isEditing === true) {
             article = {
@@ -46,9 +41,9 @@ class EditForm extends Component {
         }
 
         event.preventDefault();
-    }
+    };
 
-    handleInputChange(event) {
+    handleInputChange = (event) => {
 
         const name = event.target.name;
         const value = event.target.value;
@@ -56,15 +51,15 @@ class EditForm extends Component {
         this.setState({
             [name]: value
         });
-    }
+    };
 
-    onDelete() {
+    onDelete = () => {
         this.props.notifyDelete({id: this.props.id});
-    }
+    };
 
-    shouldClose() {
+    shouldClose = () => {
         this.props.shouldClose();
-    }
+    };
 
     render() {
         return (

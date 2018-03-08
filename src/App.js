@@ -10,14 +10,9 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = { articles: mockArray };
-
-        this.deleteArticle = this.deleteArticle.bind(this);
-        this.onAddItem = this.onAddItem.bind(this);
-        this.searchItem = this.searchItem.bind(this);
-        this.updateValues = this.updateValues.bind(this);
     }
 
-    deleteArticle(event) {
+    deleteArticle = (event) => {
         this.setState(oldState => ({
             articles: oldState.articles.filter(article => article.id !== event.id)
         }), () => {
@@ -26,9 +21,9 @@ class App extends Component {
             });
         });
 
-    }
+    };
 
-    onAddItem(event) {
+    onAddItem = (event) => {
         const tempArray = this.state.articles;
         tempArray.unshift(event);
 
@@ -37,9 +32,9 @@ class App extends Component {
                 position: toast.POSITION.TOP_RIGHT
             });
         });
-    }
+    };
 
-    searchItem(event) {
+    searchItem = (event) => {
         const searchParam = event.param.trim().toLowerCase();
         // debounce search 300 ms
         setTimeout(() => {
@@ -58,9 +53,9 @@ class App extends Component {
                 }));
             }
         }, 300);
-    }
+    };
 
-    updateValues(event) {
+    updateValues = (event) => {
         const tempArray = this.state.articles;
         tempArray.forEach(item => {
             if (item.id === event.id) {
@@ -76,7 +71,7 @@ class App extends Component {
                 position: toast.POSITION.TOP_RIGHT
             });
         });
-    }
+    };
 
     render() {
         return (

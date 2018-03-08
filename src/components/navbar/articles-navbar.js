@@ -12,22 +12,19 @@ class ArticlesNavBar extends Component {
         this.state = {
             param: ''
         };
-
-        this.addNewArticle = this.addNewArticle.bind(this);
-        this.onSearch = this.onSearch.bind(this);
     }
 
-    addNewArticle(event) {
+    addNewArticle = (event) => {
         this.props.addItem({...event});
-    }
+    };
 
-    onSearch(event) {
+    onSearch = (event) => {
         this.setState({
             param: event.target.value
         }, () => {
             this.props.searchArticle({...this.state});
         });
-    }
+    };
 
 
     render() {
