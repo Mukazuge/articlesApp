@@ -11,7 +11,7 @@ class EditForm extends Component {
             title: props.title,
             stock: props.stock
         };
-        
+
         this.handleInputChange = this.handleInputChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.onDelete = this.onDelete.bind(this);
