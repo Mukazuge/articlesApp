@@ -37,7 +37,7 @@ class ArticleCard extends Component {
                             <FontAwesomeIcon className={'mr-1 text-' + status } icon={faCircle}/>
                             {this.props.stock > 0 ? this.props.stock + ' in stock' : 'Out of stock'}
                         </CardText>
-                        <CardText>{this.props.description}</CardText>
+                        <CardText className="description-break">{this.props.description}</CardText>
                     </CardBody>
                 </Card>
             </div>
