@@ -1,3 +1,9 @@
+## NOTE
+
+**This is a two nights project**, there is no **API server**, a mock response is stored in a file and all
+**CRUD** requests are pointing to modify this. the **UX** is basic and because of its content, the project
+ is a no-profit Web App. 
+
 ## Available Scripts
 
 In the project directory, you can run:
